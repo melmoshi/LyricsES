@@ -76,8 +76,6 @@
 		864133311EF03C4100306792 /* FinishTheLyricsEdSheeran */ = {
 			isa = PBXGroup;
 			children = (
-				86A39E011EF6396500538F4F /* EasyLyrics.csv */,
-				86A39E021EF6396500538F4F /* HardLyrics.csv */,
 				864133361EF03C4100306792 /* Main.storyboard */,
 				864133461EF03C5800306792 /* Controller */,
 				864133451EF03C5200306792 /* View */,
@@ -95,6 +93,8 @@
 		864133441EF03C4C00306792 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				86A39E011EF6396500538F4F /* EasyLyrics.csv */,
+				86A39E021EF6396500538F4F /* HardLyrics.csv */,
 				86129F371EF24C7000A8B7C8 /* csv.swift */,
 				86129F351EF2439900A8B7C8 /* Question.swift */,
 			);

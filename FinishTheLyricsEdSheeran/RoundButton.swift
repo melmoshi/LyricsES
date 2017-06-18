@@ -11,7 +11,7 @@ import UIKit
 class RoundButton: UIButton {
     
     override func awakeFromNib() {
-        layer.cornerRadius = 10
+        layer.cornerRadius = 20
         clipsToBounds = true
     }
     

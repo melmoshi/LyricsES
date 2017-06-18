@@ -7,20 +7,30 @@
 //
 
 import UIKit
+import GameKit
 
 
 var points = 0
+    //tracks number of right answers
+
+var questionsAllowed = 10
 
 
 class StartScreen: UIViewController {
     
     
-    //Question Label
+    
     @IBOutlet weak var questionLbl: UILabel!
+        //Question Label
     
+    var currentQuestion = 1
+        //current question in the array 
     
-    var currentQuestion = 0
     var rightAnswerPlacement = 0
+        //where the right answer is in the array
+    
+    var questionsSeen = 0
+        //counts number of questions seen
     
     
     override func viewDidLoad() {
@@ -33,6 +43,7 @@ class StartScreen: UIViewController {
         }
         
         updateArray()
+            //replaces "=" with commas in the array
         
         newQuestion()
     }
@@ -40,7 +51,10 @@ class StartScreen: UIViewController {
     
     //Function that displays new question
     func newQuestion() {
+        
         questionLbl.text = newArray[currentQuestion].question
+        
+        questionsSeen += 1
         
         rightAnswerPlacement = Int(arc4random_uniform(3)) + 1
         
@@ -68,7 +82,11 @@ class StartScreen: UIViewController {
             
         }
         
-        currentQuestion += 1
+        print("current question is: \(currentQuestion)")
+        newArray.remove(at: (currentQuestion))
+        
+        currentQuestion = randomNum()
+        print(newArray.count)
         
     }
     
@@ -84,14 +102,23 @@ class StartScreen: UIViewController {
             print("WRONG!!!!!!")
         }
         
-        if (currentQuestion != questions.count) {
+        if (questionsSeen <= (questionsAllowed - 1)) {
             newQuestion()
         } else {
-            //if there are no new questions left
+            //when users have seen all questions
             performSegue(withIdentifier: "showScore", sender: self)
         }
         
     }
+    
+}
+
+func randomNum() -> Int {
+    let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: newArray.count)
+    
+    return randomNumber
+    
+    //Creates a random number to call from entree array
 }
 
 
