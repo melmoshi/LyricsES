@@ -10,7 +10,8 @@ import UIKit
 import GoogleMobileAds
 
 
-var levelChosen: String!
+var levelChosen = "Easy"
+var questionsAllowed = 15
 
 class HomeScreen: UIViewController, GADBannerViewDelegate {
     
@@ -37,21 +38,35 @@ class HomeScreen: UIViewController, GADBannerViewDelegate {
         
         bannerAd.load(requestBanner)
         //
-        
-        
-        
-    }
-
-    @IBAction func easyPressed(_ sender: Any) {
-        levelChosen = "Easy"
-    }
-
-    @IBAction func hardPressed(_ sender: Any) {
-        
-    levelChosen = "Hard"
     }
     
     
+    
+    @IBAction func difficultyToggle(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            levelChosen = "Easy"
+        }
+        
+        if sender.selectedSegmentIndex == 1 {
+            levelChosen = "Hard"
+        }
+    }
+    
+    
+    @IBAction func questionNumberToggle(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            questionsAllowed = 10
+        } else if sender.selectedSegmentIndex == 1 {
+            questionsAllowed = 15
+        } else if sender.selectedSegmentIndex == 2 {
+            questionsAllowed = 20
+        } else if sender.selectedSegmentIndex == 3 {
+            questionsAllowed = 25
+        }
+    }
 
 }
+
+
 

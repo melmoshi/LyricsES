@@ -8,19 +8,67 @@
 
 import UIKit
 import Social
+import GoogleMobileAds
 
 
-class PointsScreen: UIViewController {
+class PointsScreen: UIViewController, GADInterstitialDelegate {
     
+    
+    @IBOutlet weak var greeting: UILabel!
     @IBOutlet weak var pointsLbl: UILabel!
+    @IBOutlet weak var ofQuestions: UILabel!
     
+    var score: Double = (Double(points)/Double(questionsAllowed))
+    
+    var interstitialAd: GADInterstitial?
+    //Google Ads
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //SET-UP & CONFIGURE INTERSTITIAL AD:
+        interstitialAd = createAndLoadInterstitial()
 
+        //Greeting:
+        if score < 0.4 {
+            greeting.text = "Better Luck Next Time!"
+        } else if score >= 0.4 && score < 0.60 {
+            greeting.text = "Good Effort!"
+        } else if score >= 0.6 && score < 0.9 {
+            greeting.text = "Nice Work!"
+        } else if score >= 0.9 && score < 1 {
+            greeting.text = "Awesome!"
+        } else {
+            greeting.text = "Perfect Score!"
+        }
+        
+        //Points
         pointsLbl.text = String(points)
+        
+        //Of Questions
+        ofQuestions.text = "Of \(questionsAllowed) Questions"
     }
     
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        
+        let request = GADRequest()
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-8878911622308650/7298635528")
+        request.testDevices = [kGADSimulatorID]
+        interstitial.delegate = self
+        interstitial.load(request)
+        
+        
+        return interstitial
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitialAd = createAndLoadInterstitial()
+        //Resets the "Try Again" pressed count to zero
+        
+        performSegue(withIdentifier: "TryAgainSegue", sender: Any.self)
+    }
     
     
 
@@ -97,13 +145,27 @@ class PointsScreen: UIViewController {
     
     func showAlert(service: String) {
         
-        let alert = UIAlertController(title: "Bummer!", message: "This device is not connected to \(service)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Sorry!", message: "This device is not connected to \(service)", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
         
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func tryAgainPressed(_ sender: Any) {
+        
+        if interstitialAd != nil {
+            if interstitialAd!.isReady {
+                interstitialAd?.present(fromRootViewController: self)
+            }
+        }
+        
+    }
+    
+    
+    
 
 
 }

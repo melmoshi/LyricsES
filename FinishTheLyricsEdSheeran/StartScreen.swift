@@ -13,15 +13,20 @@ import GameKit
 var points = 0
     //tracks number of right answers
 
-var questionsAllowed = 10
+
 
 
 class StartScreen: UIViewController {
     
+    @IBOutlet weak var answerBtn1: AnswerButton!
     
     
     @IBOutlet weak var questionLbl: UILabel!
         //Question Label
+    
+    
+    @IBOutlet weak var chapterLbl: UILabel!
+        //Label that declares what question you're on (1/10)
     
     var currentQuestion = 1
         //current question in the array 
@@ -46,6 +51,8 @@ class StartScreen: UIViewController {
             //replaces "=" with commas in the array
         
         newQuestion()
+        
+        chapterLbl.text = "\(questionsSeen)/\(questionsAllowed)"
     }
     
     
@@ -56,7 +63,7 @@ class StartScreen: UIViewController {
         
         questionsSeen += 1
         
-        rightAnswerPlacement = Int(arc4random_uniform(3)) + 1
+        rightAnswerPlacement = Int(arc4random_uniform(4)) + 1
         
         //create button
         var button: UIButton = UIButton()
@@ -93,6 +100,7 @@ class StartScreen: UIViewController {
     
     //Button
     @IBAction func btnPressed(_ sender: UIButton) {
+        
         if sender.tag == Int(rightAnswerPlacement) {
             
             print("RIGHT")
@@ -108,6 +116,8 @@ class StartScreen: UIViewController {
             //when users have seen all questions
             performSegue(withIdentifier: "showScore", sender: self)
         }
+     
+        chapterLbl.text = "\(questionsSeen)/\(questionsAllowed)"
         
     }
     
