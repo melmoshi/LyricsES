@@ -166,6 +166,7 @@
 				TargetAttributes = {
 					8641332E1EF03C4100306792 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = RGJUGQYL7K;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -336,6 +337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RGJUGQYL7K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -345,6 +347,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.moshimedia.FinishTheLyricsEdSheeran;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -352,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RGJUGQYL7K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -361,6 +365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.moshimedia.FinishTheLyricsEdSheeran;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

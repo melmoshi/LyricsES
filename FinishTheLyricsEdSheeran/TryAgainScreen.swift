@@ -23,7 +23,6 @@ class TryAgainScreen: UIViewController {
         
         gameDefualtSettings()
         
-        randomNumFact()
         factLbl.text = factArray[randomNumFact()]
     }
 

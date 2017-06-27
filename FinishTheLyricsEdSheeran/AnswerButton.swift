@@ -23,7 +23,7 @@ class AnswerButton: UIButton {
             if isHighlighted {
                 backgroundColor = UIColor(red: 1/255, green: 149/255, blue: 227/255, alpha: 1)
             } else {
-                backgroundColor = UIColor(red: 253/255, green: 113/255, blue: 51/255, alpha: 0)
+                backgroundColor = UIColor(red: 1/255, green: 149/255, blue: 227/255, alpha: 0)
             }
         }
     }

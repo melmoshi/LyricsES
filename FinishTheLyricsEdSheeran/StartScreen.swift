@@ -41,6 +41,8 @@ class StartScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        points = 0
+        
         if levelChosen == "Easy" {
             parseCSV(difficulty: "EasyLyrics")
         } else {
