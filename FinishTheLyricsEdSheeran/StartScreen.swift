@@ -19,6 +19,7 @@ var points = 0
 class StartScreen: UIViewController {
     
     @IBOutlet weak var answerBtn1: AnswerButton!
+        //  //  //Review notes.. Does this do anything???
     
     
     @IBOutlet weak var questionLbl: UILabel!
@@ -119,11 +120,13 @@ class StartScreen: UIViewController {
             performSegue(withIdentifier: "showScore", sender: self)
         }
      
-        chapterLbl.text = "\(questionsSeen)/\(questionsAllowed)"
+        chapterLbl.text = "\(questionsSeen) / \(questionsAllowed)"
         
     }
     
 }
+
+
 
 func randomNum() -> Int {
     let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: newArray.count)

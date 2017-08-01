@@ -20,7 +20,6 @@
 		864133351EF03C4100306792 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864133341EF03C4100306792 /* HomeScreen.swift */; };
 		8641333A1EF03C4100306792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864133391EF03C4100306792 /* Assets.xcassets */; };
 		8641333D1EF03C4100306792 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8641333B1EF03C4100306792 /* LaunchScreen.storyboard */; };
-		864133481EF03DB100306792 /* Momt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 864133471EF03DB100306792 /* Momt.ttf */; };
 		8641334A1EF07CEE00306792 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864133491EF07CEE00306792 /* RoundButton.swift */; };
 		8641334C1EF07F2800306792 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8641334B1EF07F2800306792 /* StartScreen.swift */; };
 		86A39E031EF6396500538F4F /* EasyLyrics.csv in Resources */ = {isa = PBXBuildFile; fileRef = 86A39E011EF6396500538F4F /* EasyLyrics.csv */; };
@@ -45,7 +44,6 @@
 		864133391EF03C4100306792 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8641333C1EF03C4100306792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8641333E1EF03C4100306792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		864133471EF03DB100306792 /* Momt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Momt.ttf; sourceTree = "<group>"; };
 		864133491EF07CEE00306792 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		8641334B1EF07F2800306792 /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		86A39E011EF6396500538F4F /* EasyLyrics.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EasyLyrics.csv; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				864133321EF03C4100306792 /* AppDelegate.swift */,
 				864133391EF03C4100306792 /* Assets.xcassets */,
 				8641333B1EF03C4100306792 /* LaunchScreen.storyboard */,
-				864133471EF03DB100306792 /* Momt.ttf */,
 				862587051EF7684A0007BAD3 /* linowrite.ttf */,
 				8641333E1EF03C4100306792 /* Info.plist */,
 				862587091EF781830007BAD3 /* GoogleService-Info.plist */,
@@ -197,7 +194,6 @@
 				86A39E101EF7067600538F4F /* Main.storyboard in Resources */,
 				8625870C1EF785AE0007BAD3 /* Facts.csv in Resources */,
 				86A39E041EF6396500538F4F /* HardLyrics.csv in Resources */,
-				864133481EF03DB100306792 /* Momt.ttf in Resources */,
 				8625870A1EF781830007BAD3 /* GoogleService-Info.plist in Resources */,
 				8641333D1EF03C4100306792 /* LaunchScreen.storyboard in Resources */,
 				86A39E031EF6396500538F4F /* EasyLyrics.csv in Resources */,
